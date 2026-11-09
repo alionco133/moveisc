@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Móveis Catarinense</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0ee;--sf:#fff;--sf2:#f4f5f3;--tx:#1d2420;--mu:#66706a;--ln:#d5dad6;--ac:#2f5d50;--act:#fff;--sel:#dfe8e4;
+--c1:#8a6d3b;--c2:#2f5d50;--c3:#b4562f;--c4:#3d6b9a;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--sf:#1d2320;--sf2:#252c28;--tx:#e8ece9;--mu:#98a39d;--ln:#35403a;--ac:#6fb59f;--act:#10201a;--sel:#2a3b34;--c1:#d2ad6a;--c2:#6fb59f;--c3:#e0865e;--c4:#7fb0e0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141816;--sf:#1d2320;--sf2:#252c28;--tx:#e8ece9;--mu:#98a39d;--ln:#35403a;--ac:#6fb59f;--act:#10201a;--sel:#2a3b34;--c1:#d2ad6a;--c2:#6fb59f;--c3:#e0865e;--c4:#7fb0e0;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:15px/1.45 Barlow,system-ui,sans-serif;min-height:100vh;min-width:1024px}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;margin:0;letter-spacing:.02em}
+h1{font-size:24px}h2{font-size:20px}h3{font-size:16px}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.app{display:grid;grid-template-columns:220px 1fr;grid-template-rows:60px 1fr;min-height:100vh}
+.logo{display:flex;align-items:center;padding:0 20px;background:var(--sf);border-bottom:1px solid var(--ln);border-right:1px solid var(--ln);font:700 20px "Barlow Condensed",sans-serif;letter-spacing:.04em}
+.top{display:flex;align-items:center;gap:12px;padding:0 20px;background:var(--sf);border-bottom:1px solid var(--ln)}
+.top input{flex:1;max-width:420px;padding:8px 12px;border:1px solid var(--ln);border-radius:6px;background:var(--sf2)}
+.sp{flex:1}
+.ib{background:none;border:0;padding:6px;border-radius:6px;display:grid;place-items:center;color:var(--tx)}
+.ib:hover{background:var(--sf2)}
+.av{width:34px;height:34px;border-radius:50%;background:var(--ac);color:var(--act);display:grid;place-items:center;font-weight:600;font-size:13px}
+.side{background:var(--sf);border-right:1px solid var(--ln);padding:14px 10px;display:flex;flex-direction:column;gap:4px}
+.side a{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:6px;color:var(--tx);text-decoration:none}
+.side a:hover{background:var(--sf2)}.side a[aria-current=page]{background:var(--sel);font-weight:600}
+.side svg,.ib svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.main{padding:22px;min-width:0}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:8px;margin-top:16px;overflow:hidden}
+.panel>header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.pad{padding:16px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--ln);white-space:nowrap}
+th{background:var(--sf2);font-weight:600;font-size:13px;color:var(--mu)}
+tr:last-child td{border-bottom:0}
+tbody tr.sel{background:var(--sel)}
+.pill{display:inline-block;padding:2px 12px;border-radius:99px;font-size:13px;font-weight:500;border:1px solid var(--ac)}
+.pill.on{background:var(--ac);color:var(--act)}.pill.off{color:var(--mu);border-color:var(--mu)}
+select,.f input,.f select{padding:8px 10px;border:1px solid var(--ln);border-radius:6px;background:var(--sf2);width:100%}
+select.auto{width:auto}
+.btn{background:var(--ac);color:var(--act);border:0;border-radius:6px;padding:9px 18px;font-weight:600}
+.btn.ghost{background:none;color:var(--tx);border:1px solid var(--ln)}
+.kan{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;margin-top:12px;padding-bottom:4px}
+.col{background:var(--sf2);border:1px solid var(--ln);border-radius:8px;padding:10px;border-top:4px solid var(--k)}
+.col h3{text-align:center;margin-bottom:8px}.col h3 small{color:var(--mu);font:500 13px Barlow}
+.card{display:block;width:100%;text-align:left;background:var(--sf);border:1px solid var(--ln);border-radius:6px;padding:10px;margin-bottom:8px;position:relative}
+.card:hover{border-color:var(--ac)}
+.card b{display:block}.card span{font-size:13px;color:var(--mu);display:block}
+.card .av{position:absolute;right:8px;bottom:8px;width:26px;height:26px;font-size:11px}
+.bar{height:5px;border-radius:3px;background:var(--ln);margin-top:8px;margin-right:36px;overflow:hidden}.bar i{display:block;height:100%;background:var(--k)}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:8px 0 16px}
+.f label{font-size:13px;color:var(--mu);display:block}
+.grp{font-weight:600;margin-top:6px}
+.split{display:grid;grid-template-columns:260px 1fr;gap:0}
+.prof{border-right:1px solid var(--ln);padding:16px}
+.prof .av{width:64px;height:64px;font-size:22px;margin-bottom:10px}
+.prof dl{margin:14px 0 0}.prof dt{font-size:13px;color:var(--mu);margin-top:10px}.prof dd{margin:0}
+.crumb{color:var(--mu)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0}
+.sec{border-top:1px solid var(--ln);padding:14px 16px}
+.sec h3{margin-bottom:6px}
+.sec p{margin:3px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stat{display:inline-flex;align-items:center;gap:6px;padding:3px 14px;border:1px solid var(--k);border-radius:99px;font-weight:600;color:var(--k)}
+.att{display:flex;gap:10px;align-items:center;padding:6px 0}
+.link{background:none;border:0;color:var(--ac);text-decoration:underline;padding:0}
+.empty{padding:24px;text-align:center;color:var(--mu)}
+#toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+#toast.show{opacity:1}
+@media (max-width:0px){
+.app{grid-template-columns:1fr;grid-template-rows:56px 1fr;padding-bottom:64px}
+.logo{display:none}.top{padding:0 12px}
+.side{position:fixed;bottom:0;left:0;right:0;flex-direction:row;justify-content:space-around;border:0;border-top:1px solid var(--ln);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:10}
+.side a{flex-direction:column;gap:2px;font-size:12px;padding:6px 10px}
+.main{padding:14px}.split,.two{grid-template-columns:1fr}.prof{border-right:0;border-bottom:1px solid var(--ln)}
+.hide-m{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="logo">MÓVEIS CATARINENSE</div>
+  <div class="top">
+    <input id="q" type="search" placeholder="Buscar cliente" aria-label="Buscar">
+    <span class="sp"></span>
+    <button class="ib hide-m" title="Mensagens" onclick="toast('Nenhuma mensagem nova')"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
+    <button class="ib hide-m" title="Avisos" onclick="toast('Sem avisos no momento')"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></svg></button>
+    <div class="av" title="Minha conta">MC</div>
+    <button class="ib" title="Sair" onclick="toast('Você saiu da conta (demonstração)')"><svg viewBox="0 0 24 24"><path d="M12 3v9M6.3 6.5a8 8 0 1 0 11.4 0"/></svg></button>
+  </div>
+  <nav class="side" aria-label="Principal">
+    <a href="#painel" data-v="painel"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4zM10 20v-6h4v6"/></svg>Painel</a>
+    <a href="#clientes" data-v="clientes"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-4 3-6 6.5-6s6.5 2 6.5 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.4 3.5 6"/></svg>Clientes</a>
+    <a href="#pedidos" data-v="pedidos"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg>Pedidos</a>
+    <a href="#ajustes" data-v="ajustes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>Ajustes</a>
+  </nav>
+  <main class="main" id="main"></main>
+</div>
+<div id="toast" role="status"></div>
+<script>
+const ST={orcamento:{n:"Orçamento",k:"var(--c1)",p:25},aprovado:{n:"Aprovado",k:"var(--c4)",p:50},producao:{n:"Em produção",k:"var(--c3)",p:75},pronto:{n:"Pronto",k:"var(--c2)",p:100}};
+const clients=[
+{id:1,nome:"Carlos Eduardo",email:"carlos@gmail.com",tel:"(41) 9999-1111",ativo:true,ultima:"2024-09-06",end:"Rua Flor do Vale, 120, Joinville, SC"},
+{id:2,nome:"Marina Souza",email:"marina.souza@gmail.com",tel:"(47) 9888-2222",ativo:true,ultima:"2024-09-06",end:"Av. das Palmeiras, 45, Blumenau, SC"},
+{id:3,nome:"Roberto Lima",email:"roberto@lima.com.br",tel:"(48) 9777-3333",ativo:false,ultima:"2023-09-06",end:"Rua do Rio, 88, Florianópolis, SC"},
+{id:4,nome:"Fernanda Alves",email:"fe.alves@gmail.com",tel:"(47) 9666-4444",ativo:true,ultima:"2024-09-05",end:"Rua XV, 300, Itajaí, SC"},
+{id:5,nome:"João Pedro Reis",email:"jpreis@outlook.com",tel:"(49) 9555-5555",ativo:false,ultima:"2024-09-05",end:"Rua Nova, 12, Chapecó, SC"}];
+const orders=[
+{id:105,cliente:"Carlos Eduardo",tipo:"Cozinha Planejada (Armários e Balcão)",medidas:"3,50 m (largura) x 2,20 m (altura) x 0,60 m (profundidade)",material:"MDF Ultra (resistente à umidade) 18 mm",cor:"Branco fosco liso",pers:"Recorte para passa-fio, espaço do cooktop já cortado, dobradiças com amortecedor.",anexos:["rascunho_caderno_medidas.jpg","projeto_3d_cozinha.pdf"],valor:8500,desc:500,entrega:"2026-10-10",obs:"Lembrar de confirmar com o fabricante se o MDF branco já chegou na marcenaria.",status:"producao",pag:"PIX"},
+{id:11,cliente:"Marina Souza",tipo:"Guarda-roupa casal",medidas:"2,80 x 2,50 x 0,60 m",material:"MDF 15 mm",cor:"Freijó",pers:"",anexos:[],valor:6200,desc:0,entrega:"2026-11-15",obs:"",status:"orcamento",pag:"Cartão"},
+{id:22,cliente:"Fernanda Alves",tipo:"Painel de TV",medidas:"2,40 x 2,60 m",material:"MDF 18 mm",cor:"Nogueira",pers:"",anexos:[],valor:3100,desc:0,entrega:"2026-11-20",obs:"",status:"orcamento",pag:"Boleto"},
+{id:19,cliente:"Roberto Lima",tipo:"Escritório sob medida",medidas:"3,00 x 2,40 m",material:"MDF 18 mm",cor:"Cinza",pers:"",anexos:[],valor:5400,desc:200,entrega:"2026-11-17",obs:"",status:"aprovado",pag:"PIX"},
+{id:23,cliente:"João Pedro Reis",tipo:"Estante",medidas:"1,80 x 2,00 m",material:"Pinus",cor:"Natural",pers:"",anexos:[],valor:1900,desc:0,entrega:"2026-11-15",obs:"",status:"aprovado",pag:"PIX"},
+{id:20,cliente:"Marina Souza",tipo:"Cozinha planejada",medidas:"4,00 x 2,20 m",material:"MDF Ultra 18 mm",cor:"Off-white",pers:"",anexos:[],valor:9800,desc:300,entrega:"2026-11-15",obs:"",status:"producao",pag:"Cartão"},
+{id:24,cliente:"Fernanda Alves",tipo:"Banheiro: gabinete",medidas:"1,20 x 0,50 m",material:"MDF Ultra",cor:"Branco",pers:"",anexos:[],valor:2100,desc:0,entrega:"2026-11-15",obs:"",status:"producao",pag:"PIX"},
+{id:27,cliente:"Carlos Eduardo",tipo:"Rack de sala",medidas:"2,00 x 0,50 m",material:"MDF 18 mm",cor:"Carvalho",pers:"",anexos:[],valor:2400,desc:0,entrega:"2026-11-08",obs:"",status:"pronto",pag:"PIX"},
+{id:25,cliente:"Roberto Lima",tipo:"Cômoda",medidas:"1,20 x 0,90 m",material:"MDF 15 mm",cor:"Branco",pers:"",anexos:[],valor:1700,desc:0,entrega:"2026-11-08",obs:"",status:"pronto",pag:"Boleto"}];
+let cur=105,editing=false,selClient=1,nextId=106,term="";
+const $=s=>document.querySelector(s),brl=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const dt=d=>d.split("-").reverse().join("/"),ini=n=>n.split(" ").map(x=>x[0]).slice(0,2).join("");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),2200)}
+function view(){const h=location.hash.slice(1);return["painel","clientes","pedidos","ajustes"].includes(h)?h:"painel"}
+function render(){
+  const v=view();
+  document.querySelectorAll(".side a").forEach(a=>a.toggleAttribute("aria-current",a.dataset.v===v)||(a.dataset.v===v&&a.setAttribute("aria-current","page")));
+  document.querySelectorAll(".side a").forEach(a=>{if(a.dataset.v===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  $("#q").placeholder={painel:"Buscar cliente",clientes:"Pesquisar clientes",pedidos:"Buscar pedido por ID ou cliente",ajustes:"Buscar"}[v];
+  $("#main").innerHTML={painel:painel,clientes:clientesV,pedidos:pedidosV,ajustes:ajustesV}[v]();
+  document.title="Móveis Catarinense · "+v[0].toUpperCase()+v.slice(1);
+}
+function painel(){
+  const cols=Object.entries(ST).map(([k,s])=>{
+    const l=orders.filter(o=>o.status===k&&(!term||o.cliente.toLowerCase().includes(term)));
+    return `<section class="col" style="--k:${s.k}"><h3>${s.n} <small>(${l.length})</small></h3>${l.map(o=>`<button class="card" style="--k:${s.k}" onclick="openOrder(${o.id})"><b>Pedido #${o.id}</b><span>Cliente: ${esc(o.cliente)}</span><span>Data estimada: ${dt(o.entrega).slice(0,5)}</span><div class="bar"><i style="width:${s.p}%"></i></div><div class="av">${ini(o.cliente)}</div></button>`).join("")||'<div class="empty">Nenhum pedido</div>'}</section>`}).join("");
+  return `<h1>ACOMPANHAMENTO DE PEDIDOS</h1><div class="kan">${cols}</div>
+  <div class="panel"><header><h2>NOVO PEDIDO</h2></header><form class="pad" id="nf" onsubmit="return novo(event)">
+  <div class="grp">Dados do cliente</div><div class="f"><div><label>Nome</label><input name="nome" required></div><div><label>Email</label><input name="email" type="email"></div><div><label>Telefone</label><input name="tel" type="tel"></div></div>
+  <div class="grp">Dados do móvel</div><div class="f"><div><label>Tipo do item</label><input name="tipo" required></div><div><label>Material</label><input name="material"></div><div><label>Cor</label><input name="cor"></div><div><label>Dimensões</label><input name="dim" placeholder="L x A x P"></div></div>
+  <div class="grp">Valores e prazos</div><div class="f"><div><label>Valor total (R$)</label><input name="valor" type="number" min="0" step="0.01" required></div><div><label>Data esperada</label><input name="data" type="date" required></div><div><label>Método de pagamento</label><select name="pag"><option>PIX</option><option>Cartão</option><option>Boleto</option><option>Dinheiro</option></select></div></div>
+  <button class="btn" type="submit">Criar pedido</button></form></div>`}
+function novo(e){e.preventDefault();const f=Object.fromEntries(new FormData(e.target));
+  if(!clients.some(c=>c.nome.toLowerCase()===f.nome.toLowerCase()))clients.push({id:clients.length+1,nome:f.nome,email:f.email,tel:f.tel,ativo:true,ultima:f.data,end:"Endereço não informado"});
+  orders.push({id:nextId,cliente:f.nome,tipo:f.tipo,medidas:f.dim||"-",material:f.material||"-",cor:f.cor||"-",pers:"",anexos:[],valor:+f.valor,desc:0,entrega:f.data,obs:"",status:"orcamento",pag:f.pag});
+  toast("Pedido #"+nextId+" criado em Orçamento");nextId++;render();return false}
+function openOrder(id){cur=id;editing=false;location.hash="pedidos"}
+function clientesV(){
+  const l=clients.filter(c=>!term||(c.nome+c.email).toLowerCase().includes(term));
+  const c=clients.find(x=>x.id===selClient)||clients[0],os=orders.filter(o=>o.cliente===c.nome);
+  return `<div class="panel" style="margin-top:0"><header><h2>CLIENTES E HISTÓRICO</h2><span class="sp"></span><select class="auto" onchange="sortC(this.value)" aria-label="Ordenar"><option value="nome">Ordenar por nome</option><option value="ultima">Última compra</option></select></header>
+  <div class="tw"><table><thead><tr><th>Nome do cliente</th><th>Contato</th><th>Status</th><th>Última compra</th><th>Ações</th></tr></thead><tbody>${l.map(x=>`<tr class="${x.id===c.id?"sel":""}"><td>${esc(x.nome)}</td><td>${esc(x.email)}</td><td><span class="pill ${x.ativo?"on":"off"}">${x.ativo?"Ativo":"Inativo"}</span></td><td>${dt(x.ultima)}</td><td><button class="ib" title="Ver cliente" onclick="selClient=${x.id};render()"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="ib" title="Editar" onclick="toast('Edição de ${esc(x.nome)} em breve')"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16zM14 7l3 3"/></svg></button></td></tr>`).join("")||`<tr><td colspan="5" class="empty">Nenhum cliente encontrado</td></tr>`}</tbody></table></div></div>
+  <div class="panel"><header><h2>DETALHES DO CLIENTE</h2></header><div class="split"><aside class="prof"><div class="av">${ini(c.nome)}</div><b>${esc(c.nome)}</b><div style="color:var(--mu)">${esc(c.end)}</div>
+  <dl><dt>Nome</dt><dd>${esc(c.nome)}</dd><dt>Endereço</dt><dd>${esc(c.end)}</dd><dt>Contato</dt><dd>${esc(c.tel)}<br>${esc(c.email)}</dd></dl></aside>
+  <div class="tw"><table><thead><tr><th>ID do pedido</th><th>Data</th><th>Itens</th><th>Total</th><th>Status</th></tr></thead><tbody>${os.map(o=>`<tr><td><button class="link" onclick="openOrder(${o.id})">#${o.id}</button></td><td>${dt(o.entrega)}</td><td>${esc(o.tipo)}</td><td>${brl(o.valor-o.desc)}</td><td><span class="stat" style="--k:${ST[o.status].k}">${ST[o.status].n}</span></td></tr>`).join("")||`<tr><td colspan="5" class="empty">Este cliente ainda não tem pedidos</td></tr>`}</tbody></table></div></div></div>`}
+function sortC(k){clients.sort((a,b)=>k==="nome"?a.nome.localeCompare(b.nome):b.ultima.localeCompare(a.ultima));render()}
+function pedidosV(){
+  const o=orders.find(x=>x.id===cur)||orders[0],s=ST[o.status],c=clients.find(x=>x.nome===o.cliente);
+  const inp=(k,v)=>`<input value="${esc(v)}" data-k="${k}" style="margin:2px 0">`;
+  const fld=(l,k)=>editing?`<p><b>${l}:</b>${inp(k,o[k])}</p>`:`<p><b>${l}:</b> ${esc(o[k]||"-")}</p>`;
+  return `<h1><span class="crumb">PEDIDOS &gt;</span> DETALHES DO PEDIDO #${o.id}</h1>
+  <div class="row" style="margin-top:10px"><label class="crumb" for="pk">Ir para o pedido</label><select id="pk" class="auto" onchange="cur=+this.value;editing=false;render()">${orders.map(x=>`<option value="${x.id}" ${x.id===o.id?"selected":""}>#${x.id} · ${esc(x.cliente)}</option>`).join("")}</select></div>
+  <div class="panel" style="margin-top:8px"><div class="pad"><div class="row"><button class="btn ${editing?"":"ghost"}" onclick="editBtn()">${editing?"Salvar alterações":"Editar"}</button>${editing?'<button class="btn ghost" onclick="editing=false;render()">Cancelar</button>':""}</div>
+  <div class="row"><b>STATUS ATUAL:</b><span class="stat" style="--k:${s.k}">${s.n}</span><select class="auto" aria-label="Alterar status" onchange="orders.find(x=>x.id===${o.id}).status=this.value;toast('Status alterado para '+ST[this.value].n);render()">${Object.entries(ST).map(([k,v])=>`<option value="${k}" ${k===o.status?"selected":""}>${v.n}</option>`).join("")}</select></div>
+  <div class="row"><b>CLIENTE:</b> ${esc(o.cliente)}${c?" | "+esc(c.tel)+" |":""} <button class="link" onclick="selClient=${c?c.id:1};location.hash='clientes'">Ver cliente</button></div></div>
+  <div class="sec"><h3>Especificações técnicas do móvel</h3>${fld("Tipo de móvel","tipo")}${fld("Medidas","medidas")}${fld("Madeira/material","material")}${fld("Cor/acabamento","cor")}${fld("Personalizações e cortes","pers")}</div>
+  <div class="sec"><h3>Anexos e projeto</h3>${o.anexos.map(a=>`<div class="att"><span>${a.endsWith(".pdf")?"📄":"📷"}</span>${esc(a)}<button class="link" onclick="toast('Pré-visualização indisponível na demonstração')">Visualizar</button></div>`).join("")||'<p style="color:var(--mu)">Nenhum anexo neste pedido.</p>'}</div>
+  <div class="sec two"><div><h3>Valores e prazos</h3><p>Valor do projeto: ${brl(o.valor)}</p><p>Desconto: ${brl(o.desc)}</p><p><b>Valor final: ${brl(o.valor-o.desc)}</b></p><p><b>Data de entrega: ${dt(o.entrega)}</b></p><p>Pagamento: ${esc(o.pag)}</p></div>
+  <div><h3>Observações internas</h3>${editing?`<textarea data-k="obs" rows="4" style="width:100%;padding:8px;border:1px solid var(--ln);border-radius:6px;background:var(--sf2);color:var(--tx);font:inherit">${esc(o.obs)}</textarea>`:`<p>${esc(o.obs)||'<span style="color:var(--mu)">Sem observações.</span>'}</p>`}</div></div></div>`}
+function editBtn(){if(editing){const o=orders.find(x=>x.id===cur);document.querySelectorAll("[data-k]").forEach(i=>{if(i.tagName!=="SELECT")o[i.dataset.k]=i.value});editing=false;render();toast("Alterações salvas")}else{editing=true;render()}}
+function ajustesV(){return `<h1>AJUSTES</h1><div class="panel"><div class="pad"><div class="row"><b>Tema</b><select class="auto" onchange="setTheme(this.value)" aria-label="Tema"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Escuro</option></select></div><p style="color:var(--mu)">Outras opções da conta e da empresa serão adicionadas aqui.</p></div></div>`}
+function setTheme(t){if(t==="auto")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("mc-theme",t)}catch(e){}}
+try{const t=localStorage.getItem("mc-theme");if(t&&t!=="auto")document.documentElement.setAttribute("data-theme",t)}catch(e){}
+$("#q").addEventListener("input",e=>{term=e.target.value.trim().toLowerCase();const v=view();
+  if(v==="pedidos"&&term){const m=orders.find(o=>String(o.id)===term.replace("#","")||o.cliente.toLowerCase().includes(term));if(m){cur=m.id;editing=false;render()}}
+  else if(v==="painel"||v==="clientes"){const p=e.target.selectionStart;render()}});
+addEventListener("hashchange",render);render();
+</script>
+</body>
+</html>
